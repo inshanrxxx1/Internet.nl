@@ -96,9 +96,11 @@
   <footer id="footer">
     <img id="flag" src="{% static "clear.gif" %}" alt="">
     <div class="wrap">
-     
+      {% if "INTERNETNL_BRANDING"|get_settings_value %}
+      {% include "string.html" with name="base info" %}
+      {% else %}
       {% include "string.html" with name="base info custom" %}
-      
+      {% endif %}
       <div class="version">v{{ "VERSION"|get_settings_value }}</div>
       <hr>
       <ul>
