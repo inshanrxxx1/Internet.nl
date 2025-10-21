@@ -169,11 +169,11 @@ header {
   width: 100%;
   background-color: #ffffff;
   box-shadow: 0px 1px 4px #888888;
-  border-bottom: 8px solid #05BFD6;
+  border-bottom: 8px solid #1A5093;
 }
 
 main {
-  background-color: #e3e3e3;
+  background-color: white;
   padding-bottom: .5em;
 }
 
@@ -183,8 +183,8 @@ main {
 }
 
 .home .mainwrap {
-  background-color: #05BFD6;
-  background: linear-gradient(#05BFD6, #45E7FB);
+  background-color: #1A5093;
+  background: linear-gradient(#1A5093, #1A5093);
   padding-top: 0;
 }
 
@@ -237,8 +237,8 @@ header .wrap {
     font-size: 100%;
     width: 100%;
 /* basic: show logo */
-    background: url('/static/logo_en.png');
-    background: url('/static/logo_en.svg');
+    background: url('/static/test_post.png');
+    background: url('/static/test_post.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left center;
@@ -459,7 +459,7 @@ nav[aria-hidden=false] {
 @media screen {
 
     .introwrap p span {
-      background: #008297;
+   
       color: #ffffff;
       display: inline-block;
       padding: .5em 1em .7em 1em;
@@ -1224,7 +1224,7 @@ table td {
   height: 2.5em; /* 40px */
 }
 .score-container .score {
-  background: #ffab4c;
+  background: #03cea4;
   color: black;
   width: 2.5em; /* 40px */
   text-align: center;
@@ -1264,8 +1264,8 @@ table td {
   margin: 0 1px 0 0;
   padding: 0 0 10px 0;
   border-radius: 0 5px 5px 0;
-  background-color: #05BFD6;
-  background-color: rgba(5, 191, 214, .95);
+  background-color: #D72443;
+  background-color: #D72443;
   background-image: linear-gradient(
     center bottom,
     rgb(43,194,83) 37%,
@@ -1318,7 +1318,7 @@ table td {
 /* ============================= */
 /* styling for semi-fixed header */
 .body-with-semifixed-header {
-  background-color: #e3e3e3;
+  background-color: white;
 }
 .body-with-semifixed-header main {
     /* minimum height for header on small screens */
@@ -1574,7 +1574,7 @@ footer ul li.follow-us {
     float: right;
   }
 
-  .introwrap p span:after,
+  /* .introwrap p span:after,
   .introwrap p span:before {
     content: '';
     position: absolute;
@@ -1589,13 +1589,13 @@ footer ul li.follow-us {
     left: -20px;
     bottom: 0;
     border-color: transparent #008297;
-  }
+  } */
 
-  .introwrap p span:after {
+  /* .introwrap p span:after {
     right: -20px;
     top: 0;
     border-color: #008297 transparent;
-  }
+  } */
 
   .home .block.news,
   .home .block.hall-of-fame { /* v5 issue #248 */
@@ -1722,7 +1722,8 @@ footer ul li.follow-us {
   }
   .introwrap .wrap {
     width: 62.500em; /* 1000px */
-
+    margin-top: 25px;
+    margin-bottom:25px;
     margin-left:auto;
     margin-right:auto;
     padding-top: .5em;

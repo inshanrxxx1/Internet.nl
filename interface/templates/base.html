@@ -37,15 +37,16 @@
   <div class="skiplink"><a href="#footer">{% include "string.html" with name='page gotofooter' %}</a></div>
   <header>
     <div class="wrap">
-      {% if "INTERNETNL_BRANDING"|get_settings_value %}
-      <div id="masthead">
-        <p id="site-title"><a href="/"><span class="hidden">{% include "string.html" with name='page sitetitle' %}</span></a></p>
-        <p id="site-description"><span class="hidden">{% include "string.html" with name='page sitedescription' %}</span></p>
+ 
+     
+      <div id="masthead" style="background-color: red !important;">
+        <p id="site-title"><a href="/"></p>
+        <!-- <p id="site-description"><span class="hidden">{% include "string.html" with name='page sitedescription' %}</span></p> -->
       </div>
-      {% endif %}
+    
 
       <!-- language switch -->
-      <div id="language-switch-header-container">
+      <!-- <div id="language-switch-header-container">
         <ul class="language-switch-list">
 
       {% with user_language=request.current_language_code %}
@@ -66,19 +67,16 @@
       {% endwith %}
 
         </ul>
-      </div>
+      </div> -->
 
       <nav id="sitenav">
+        
         <ul>
           <li class="{% if pagemenu == 'home' %}current{% endif %}"><a href="/">{% include "string.html" with name="base home" %}</a></li>
-          <li class="{% if pagemenu == 'news' %}current{% endif %}"><a href="/news/">{% include "string.html" with name="base news" %}</a></li>
+          <!-- <li class="{% if pagemenu == 'news' %}current{% endif %}"><a href="/news/">{% include "string.html" with name="base news" %}</a></li>
           <li class="{% if pagemenu == 'faqs' %}current{% endif %}"><a href="/faqs/">{% include "string.html" with name="base faqs" %}</a></li>
-          <li class="{% if pagemenu == 'halloffame' %}current{% endif %}"><a href="/halloffame/">{% include "string.html" with name="base halloffame" %}</a></li>
-          {% if "INTERNETNL_BRANDING"|get_settings_value %}
-          <li class="{% if pagemenu == 'about' %}current{% endif %}"><a href="/about/">{% include "string.html" with name="base about" %}</a></li>
-          {% else %}
-          <li class="{% if pagemenu == 'about' %}current{% endif %}"><a href="/about/">{% include "string.html" with name="base about custom" %}</a></li>
-          {% endif %}
+          <li class="{% if pagemenu == 'halloffame' %}current{% endif %}"><a href="/halloffame/">{% include "string.html" with name="base halloffame" %}</a></li> -->
+    
         </ul>
       </nav>
     </div>
@@ -95,7 +93,7 @@
     </div>
   </main>
 
-  <footer id="footer">
+  <!-- <footer id="footer">
     <img id="flag" src="{% static "clear.gif" %}" alt="">
     <div class="wrap">
       {% if "INTERNETNL_BRANDING"|get_settings_value %}
@@ -118,7 +116,7 @@
         {% endif %}
       </ul>
     </div>
-  </footer>
+  </footer> -->
   <script type="text/javascript" src="{% static "js/menu-min.js" %}" defer></script>
   <script type="text/javascript" src="{% static "js/accordion-min.js" %}" defer></script>
   <script type="text/javascript" src="{% static "js/matomo-min.js" %}"></script>

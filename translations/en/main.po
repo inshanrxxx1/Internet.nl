@@ -4382,9 +4382,8 @@ msgstr ""
 
 #, md-format
 msgid "home teaser"
-msgstr ""
-"Inshan Test"
-
+msgstr "Modern Internet standards power a faster, more reliable web. \n"
+"Are you using them?"
 
 msgid "mail pagetitle"
 msgstr "Email test:"

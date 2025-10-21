@@ -79,7 +79,7 @@ main,
 .mainwrap,
 .testresults,
 .body-with-semifixed-header {
-  background-color: #ffffff  !important;
+  background-color: red  !important;
 }
 
 footer {
@@ -116,7 +116,7 @@ footer {
 }
 
 #site-title a {
-  content:url('/static/logo_en.png');
+  content:url('/static/test_post.png');
   width: 296px;
   height: 65px;
 }
