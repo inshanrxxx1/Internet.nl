@@ -1,74 +1,103 @@
-{% extends "base.html" %}
-{% load translate %}
-
-{% block introcontent %}
-      <div class="introwrap">
-        <section class="wrap">
-          <h1 class="hidethis">
-            {% include "string.html" with name='base home' %}
-          </h1>
-          <p>
-            <span style="color:white !important">{% include "string.html" with name='home teaser' %}</span>
-          </p>
-        </section>
+{% extends "base.html" %} {% load translate %} {% block introcontent %}
+<div class="introwrap">
+  <section class="wrap">
+    <h1 class="hidethis">{% include "string.html" with name='base home' %}</h1>
+    <p>
+      <span>{% include "string.html" with name='home teaser' %}</span>
+    </p>
+  </section>
+</div>
+<div class="wrap">
+  <section class="block websitetest">
+    <div class="wrapper">
+      <div class="title-and-explanation">
+        <h2>{% include "string.html" with name="base test website label" %}</h2>
+        {% include "content.html" with name="base test website text" %}
+        <p class="read-more">
+          <a href="/test-site/"
+            >{% include "string.html" with name="base test explain" %}</a
+          >
+        </p>
       </div>
-      <div class="wrap">
-        <section class="block websitetest">
-          <div class="wrapper">
-            <div class="title-and-explanation">
-              <h2>{% include "string.html" with name="base test website label" %}</h2>
-              {% include "content.html" with name="base test website text" %}
-              <p class="read-more">
-                <a href="/test-site/">{% include "string.html" with name="base test explain" %}</a>
-              </p>
-            </div>
-            <form action="/site/" method="POST">
-              <label class="text-input" for="web-url">{% include "string.html" with name="base test website input" %}
-              <input id="web-url" type="text" inputmode="url" name="url" placeholder="www.example.nl" autocorrect="off" autocapitalize="none" spellcheck="false">
-              </label>
-              <div class="contains-button">
-                <button>{% include "string.html" with name="base test start" %}</button>
-              </div>
-            </form>
-          </div>
-        </section>
-        <section class="block emailtest">
-          <div class="wrapper">
-            <div class="title-and-explanation">
-              <h2>{% include "string.html" with name="base test mail label" %}</h2>
-              {% include "content.html" with name="base test mail text" %}
-              <p class="read-more">
-                <a href="/test-mail/">{% include "string.html" with name="base test explain" %}</a>
-              </p>
-            </div>
-            <form action="/mail/" method="POST">
-              <label class="text-input" for="mail-url">{% include "string.html" with name="base test mail input" %}
-                <span class="emailfield before">
-                <input id="mail-url" class="email" type="text" inputmode="url" name="url" placeholder="example.nl" autocorrect="off" autocapitalize="none" spellcheck="false">
-                </span>
-              </label>
-              <div class="contains-button">
-                <button>{% include "string.html" with name="base test start" %}</button>
-              </div>
-            </form>
-          </div>
-        </section>
-        <section class="block connectiontest">
-          <div class="wrapper">
-            <div class="title-and-explanation">
-              <h2>{% include "string.html" with name="base test connection label" %}</h2>
-              {% include "content.html" with name="base test connection text" %}
-              <p class="read-more">
-                <a href="/test-connection/">{% include "string.html" with name="base test explain" %}</a>
-              </p>
-            </div>
-            <form action="/connection/" method="POST" id="form-connection-test">
-              <div class="contains-button">
-                <button>{% include "string.html" with name="base test start" %}</button>
-              </div>
-            </form>
-          </div>
-        </section>
+      <form action="/site/" method="POST">
+        <label class="text-input" for="web-url"
+          >{% include "string.html" with name="base test website input" %}
+          <input
+            id="web-url"
+            type="text"
+            inputmode="url"
+            name="url"
+            placeholder="www.example.nl"
+            autocorrect="off"
+            autocapitalize="none"
+            spellcheck="false"
+          />
+        </label>
+        <div class="contains-button">
+          <button>
+            {% include "string.html" with name="base test start" %}
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <section class="block emailtest">
+    <div class="wrapper">
+      <div class="title-and-explanation">
+        <h2>{% include "string.html" with name="base test mail label" %}</h2>
+        {% include "content.html" with name="base test mail text" %}
+        <p class="read-more">
+          <a href="/test-mail/"
+            >{% include "string.html" with name="base test explain" %}</a
+          >
+        </p>
       </div>
+      <form action="/mail/" method="POST">
+        <label class="text-input" for="mail-url"
+          >{% include "string.html" with name="base test mail input" %}
+          <span class="emailfield before">
+            <input
+              id="mail-url"
+              class="email"
+              type="text"
+              inputmode="url"
+              name="url"
+              placeholder="example.nl"
+              autocorrect="off"
+              autocapitalize="none"
+              spellcheck="false"
+            />
+          </span>
+        </label>
+        <div class="contains-button">
+          <button>
+            {% include "string.html" with name="base test start" %}
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <section class="block connectiontest">
+    <div class="wrapper">
+      <div class="title-and-explanation">
+        <h2>
+          {% include "string.html" with name="base test connection label" %}
+        </h2>
+        {% include "content.html" with name="base test connection text" %}
+        <p class="read-more">
+          <a href="/test-connection/"
+            >{% include "string.html" with name="base test explain" %}</a
+          >
+        </p>
+      </div>
+      <form action="/connection/" method="POST" id="form-connection-test">
+        <div class="contains-button">
+          <button>
+            {% include "string.html" with name="base test start" %}
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
 {% endblock %}
-
