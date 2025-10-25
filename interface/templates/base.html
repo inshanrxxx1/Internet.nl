@@ -75,7 +75,7 @@
           <li class="{% if pagemenu == 'home' %}current{% endif %}"><a href="/">{% include "string.html" with name="base home" %}</a></li>
           <!-- <li class="{% if pagemenu == 'news' %}current{% endif %}"><a href="/news/">{% include "string.html" with name="base news" %}</a></li>
           <li class="{% if pagemenu == 'faqs' %}current{% endif %}"><a href="/faqs/">{% include "string.html" with name="base faqs" %}</a></li>-->
-          <li class="{% if pagemenu == 'halloffame' %}current{% endif %}"><a href="/halloffame/">{% include "string.html" with name="base halloffame" %}</a></li> 
+          <!-- <li class="{% if pagemenu == 'halloffame' %}current{% endif %}"><a href="/halloffame/">{% include "string.html" with name="base halloffame" %}</a></li>  -->
     
         </ul>
       </nav>
@@ -99,12 +99,14 @@
       {% if "INTERNETNL_BRANDING"|get_settings_value %}
       {% include "string.html" with name="base info" %}
       {% else %}
+      <span>{% include "string.html" with name='home teaser' %}</span>
+      <br>
       {% include "string.html" with name="base info custom" %}
       {% endif %}
-      <div class="version">v{{ "VERSION"|get_settings_value }}</div>
+      <div class="version">v1.0</div>
       <hr>
       <ul>
-        <li><a class="footlink" href="/disclosure/">{% include "string.html" with name="base disclosure" %}</a></li>
+        <!-- <li><a class="footlink" href="/disclosure/">{% include "string.html" with name="base disclosure" %}</a></li> -->
         <li><a class="footlink" href="/privacy/">{% include "string.html" with name="base privacy" %}</a></li>
         <li><a class="footlink" href="/copyright/">{% include "string.html" with name="base copyright" %}</a></li>
         {% if "HAS_ACCESSIBILITY_PAGE"|get_settings_value %}
