@@ -31,15 +31,15 @@
   #site-title a {
     height: 33px;
     /* logo with site description below */
-    background: url('/static/test_post.png');
-    background: url('/static/test_post.png');
+    background: url('/static/securepost_logo.png');
+    background: url('/static/securepost_logo.png');
   }
 }
 
 @media (min-width:500px) AND (max-width:739px) {
   #site-title a {
-    background: url('/static/test_post.png');
-    background: url('/static/test_post.png');
+    background: url('/static/securepost_logo.png');
+    background: url('/static/securepost_logo.png');
     }
 }
 
@@ -47,8 +47,8 @@
   #site-title a {
     height: 25px;
     /* logo with site description below */
-    background: url('/static/test_post.png');
-    background: url('/static/test_post.png');
+    background: url('/static/securepost_logo.png');
+    background: url('/static/securepost_logo.png');
   }
 }
 

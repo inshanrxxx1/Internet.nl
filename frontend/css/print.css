@@ -116,7 +116,7 @@ footer {
 }
 
 #site-title a {
-  content:url('/static/test_post.png');
+  content:url('/static/securepost_logo.png');
   width: 296px;
   height: 65px;
 }

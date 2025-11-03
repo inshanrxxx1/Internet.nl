@@ -22,7 +22,7 @@ main .wrap .block {
 #site-title a {
   font-size: 32px;
   min-height: 36px;
-  background: url('/static/test_post.png') center left no-repeat;
+  background: url('/static/securepost_logo.png') center left no-repeat;
   color: black;
   width: 300px;
   height: 65px;

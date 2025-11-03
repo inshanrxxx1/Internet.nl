@@ -238,8 +238,8 @@ header .wrap {
     font-size: 100%;
     width: 100%;
 /* basic: show logo */
-    background: url('/static/test_post.png');
-    background: url('/static/test_post.png');
+    background: url('/static/securepost_logo.png');
+    background: url('/static/securepost_logo.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left center;
