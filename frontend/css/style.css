@@ -794,6 +794,15 @@ aside .further-testing li p,
   margin-bottom: 0;
 }
 
+.attribution {
+  color:white
+}
+
+.attribution-link{
+  color:black;
+  font-weight: 600;
+}
+
 .read-more {
   overflow: hidden;
   display: block;
