@@ -2515,3 +2515,64 @@ header .language-switch-list li button:focus {
 #menu-button i {
   color: var(--text-main) !important;
 }
+
+/* ==========================================================
+   CARD ALIGNMENT FIX (Bulletproof Flexbox)
+   ========================================================== */
+
+/* 1. Ensure the parent container stretches its children naturally */
+.home main .wrap {
+  display: flex !important;
+  align-items: stretch !important; 
+}
+
+/* 2. Make the block a flex column and force it to stretch to the tallest card */
+.home .block {
+  display: flex !important;
+  flex-direction: column !important;
+  align-self: stretch !important;
+  height: auto !important; /* Prevents shrink-wrapping */
+}
+
+/* 3. The inner wrapper must grow to fill the stretched block */
+.home .block .wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important; 
+}
+
+/* 4. Kill the old table-layout rules so they don't fight our Flexbox */
+.home .block .wrapper .title-and-explanation {
+  display: block !important;
+  flex-grow: 0 !important;
+}
+
+/* 5. Push the ENTIRE form to the absolute bottom of the card */
+.home .block .wrapper form {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-top: auto !important; /* This automatically creates the magic spacer */
+  padding-top: 1.5rem !important;
+  width: 100% !important;
+}
+
+/* Ensure the button stays at the bottom of its form area */
+.home .block .wrapper form .contains-button {
+  margin-top: auto !important;
+}
+
+/* 6. Fix the "about the test" link so it hugs the paragraph above it */
+.home .block .wrapper .read-more {
+  display: block !important;
+  margin-top: 0.5rem !important;
+  padding-bottom: 0 !important;
+}
+
+.home .block .wrapper .read-more a {
+  color: var(--accent-purple) !important;
+  text-decoration: none !important;
+}
+
+.home .block .wrapper .read-more a:hover {
+  text-decoration: underline !important;
+}
