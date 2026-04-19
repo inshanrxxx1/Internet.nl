@@ -1817,3 +1817,701 @@ ul.menu li a[aria-current="page"] {
 }
 
 /* ====================================================== */
+
+
+
+/* 
+   dark-dashboard-theme.css
+   Full Modern Dark Theme Overrides - Glassmorphism Edition
+   Include this file AFTER your original style.css 
+*/
+
+:root {
+  /* Core Dashboard Colors */
+  --bg-app: #08080a;              
+  --bg-surface: #121318;          
+  --bg-surface-elevated: #1a1b23; 
+  --bg-surface-highlight: #1e1b2e;
+  
+  /* Accents & Gradients */
+  --accent-purple: #9d72ff;
+  --gradient-purple: linear-gradient(90deg, #a881f3 0%, #7e56f8 100%);
+  
+  /* Status Colors */
+  --status-green: #10b981;
+  --status-red: #ef4444;
+  --status-warning: #f59e0b;
+  
+  /* Text Colors */
+  --text-main: #f8fafc;
+  --text-muted: #8b8d9b;
+  
+  /* Borders and Structure */
+  --border-subtle: #23252e;
+  --border-focus: #4b416e;
+  
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+  
+  --font-modern: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ==========================================================
+   GLOBAL OVERRIDES 
+   ========================================================== */
+
+body, html {
+  background-color: var(--bg-app) !important;
+  color: var(--text-main) !important;
+  font-family: var(--font-modern) !important;
+}
+
+main, .mainwrap {
+  background-color: transparent !important;
+  background: none !important;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-modern) !important;
+  color: var(--text-main) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em;
+}
+
+p, li, .description {
+  color: var(--text-muted) !important;
+}
+
+a {
+  color: var(--accent-purple) !important;
+}
+
+/* Code Tag Styling */
+code {
+  background-color: var(--accent-purple) !important;
+  color: #ffffff !important;
+  padding: 0.15rem 0.4rem !important;
+  border-radius: var(--radius-sm) !important;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace !important;
+  font-size: 0.85em !important;
+  box-shadow: 0 2px 8px rgba(157, 114, 255, 0.2) !important;
+  border: none !important;
+}
+
+/* Force specific problematic old links and headers to be white */
+.panel-title a,
+.panel-title-old,
+.panel-title a.active,
+.panel-title a:hover,
+.panel-title a:focus,
+.accordion .panel-title a,
+.block h3 a,
+.testresults h2,
+.testresults h3,
+.testresults h4,
+.testresults .test-subsection,
+.test-title h2 {
+  color: var(--text-main) !important;
+}
+
+.testresults .test-subsection {
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+}
+
+/* ==========================================================
+   CARD & BLOCK STYLING
+   ========================================================== */
+
+.block {
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2) !important;
+  padding: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* ==========================================================
+   TOP SUMMARY: GLASSMORPHISM & SCORE UI
+   ========================================================== */
+
+#testresults-overview.block {
+  background: rgba(26, 27, 35, 0.4) !important;
+  backdrop-filter: blur(16px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(120%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.score-container {
+  display: flex !important;
+  align-items: center !important;
+  background: rgba(0, 0, 0, 0.25) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 1.25rem 1.5rem !important;
+  margin: 1rem 0 2rem 0 !important;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.score-container .score {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  font-family: ui-monospace, SFMono-Regular, monospace !important;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.05em;
+  color: #ffffff !important;
+  background: transparent !important;
+  -webkit-text-fill-color: initial !important;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3) !important;
+  margin: 0 1.5rem 0 0 !important;
+  line-height: 1 !important;
+  border: none !important;
+  width: 4rem !important;
+  height: 2.5rem !important;
+  float: none !important;
+}
+
+.score-container .meter {
+  flex-grow: 1 !important;
+  height: 14px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-radius: var(--radius-pill) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  width: auto !important;
+  margin: 0 !important;
+  float: none !important;
+}
+
+.score-container .meter > span {
+  display: block !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
+  background: var(--gradient-purple) !important;
+  border-radius: var(--radius-pill) !important;
+  box-shadow: 0 0 12px rgba(168, 129, 243, 0.6), inset 0 -2px 4px rgba(0,0,0,0.2) !important;
+}
+
+/* ==========================================================
+   CONDENSED SUMMARY LIST WITH ORIGINAL ICONS
+   ========================================================== */
+
+.main-items {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+  margin: 1.5rem 0 2rem 0 !important;
+  padding: 0 !important;
+}
+
+.main-item {
+  display: block !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0.15rem 0 0.15rem 2rem !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  list-style: none !important;
+  background-repeat: no-repeat !important;
+  background-position: left center !important;
+  background-size: 1.2rem 1.2rem !important;
+}
+
+.main-item.passed { background-image: url('/static/li-shield-ok.svg') !important; }
+.main-item.failed, .main-item.notpassed { background-image: url('/static/li-shield-error.svg') !important; }
+.main-item.warning, .main-item.almost-there { background-image: url('/static/li-shield-warning.svg') !important; }
+
+.main-item a {
+  display: inline !important; 
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  color: var(--text-main) !important;
+  text-decoration: none !important;
+  line-height: 1.5 !important;
+  white-space: normal !important;
+}
+
+.main-item a:hover {
+  text-decoration: underline !important;
+}
+
+.main-item a::before, .test-title h2::before { 
+  display: none !important; 
+}
+
+/* ==========================================================
+   EXPANDABLE BLOCKS (Dark mode accordions)
+   ========================================================== */
+
+.testresults {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-top: 1rem !important;
+}
+
+.testresult,
+.faq-subtest,
+.faq-test {
+  background: var(--bg-surface-elevated) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-md) !important;
+  margin-bottom: 0.5rem !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.panel-title a,
+.panel-title-old {
+  background: transparent !important;
+  padding: 1rem 1.25rem !important;
+  font-weight: 500 !important;
+  border: none !important;
+  display: block !important;
+  transition: background 0.2s ease !important;
+  text-decoration: none !important;
+}
+
+.panel-title a:hover {
+  background: var(--bg-surface-highlight) !important;
+}
+
+.panel-content, 
+.js .accordion {
+  padding: 1rem 1.25rem !important;
+  border-top: 1px solid var(--border-subtle) !important;
+  background: var(--bg-app) !important;
+  color: var(--text-main) !important;
+  margin: 0 !important;
+}
+
+table { width: 100% !important; }
+table th {
+  border-bottom: 1px solid var(--border-subtle) !important;
+  color: var(--text-muted) !important;
+  padding-bottom: 0.5rem !important;
+  font-size: 0.85rem !important;
+}
+table td {
+  color: var(--text-main) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.02) !important;
+  padding: 0.75rem 0 !important;
+}
+
+.test-header {
+  padding: 1rem 0 !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  margin-bottom: 1rem !important;
+}
+.test-header hr { display: none !important; }
+.test-title h2 { font-size: 1.15rem !important; margin-bottom: 0.25rem !important;}
+
+/* ==========================================================
+   INPUTS, FORMS & BUTTONS
+   ========================================================== */
+
+.block form label {
+  color: var(--text-muted) !important;
+  font-size: 0.85rem !important;
+  margin-bottom: 0.5rem !important;
+  display: block;
+}
+
+.block input[type="text"],
+.block input[type="url"],
+.block input[type="email"] {
+  background-color: var(--bg-surface-elevated) !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-main) !important;
+  border-radius: var(--radius-pill) !important;
+  padding: 0.75rem 1.25rem !important;
+  font-size: 0.95rem !important;
+  width: 100% !important;
+  height: auto !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+  outline: none !important;
+}
+
+.block input:focus {
+  border-color: var(--accent-purple) !important;
+  box-shadow: 0 0 0 2px rgba(168, 129, 243, 0.2) !important;
+}
+
+.block .emailfield {
+  display: flex !important;
+  background: var(--bg-surface-elevated) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-pill) !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin-top: 0.5rem !important;
+  overflow: hidden !important;
+}
+
+.block .emailfield:focus-within {
+  border-color: var(--accent-purple) !important;
+}
+
+.block .emailfield:before {
+  content: '@' !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 1rem !important;
+  background: transparent !important;
+  color: var(--text-muted) !important;
+  border-right: 1px solid var(--border-subtle) !important;
+  height: auto !important;
+  width: auto !important;
+  float: none !important;
+}
+
+.block .emailfield input {
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0.75rem 1rem !important;
+  width: 100% !important;
+  float: none !important;
+  height: auto !important;
+  border-radius: 0 var(--radius-pill) var(--radius-pill) 0 !important;
+}
+.block .emailfield input:focus { box-shadow: none !important; }
+
+.block button, 
+.contains-button button {
+  background: var(--gradient-purple) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: var(--radius-pill) !important;
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 500 !important;
+  font-size: 0.95rem !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.25) !important;
+  width: 100% !important;
+  margin-top: 1.25rem !important;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.block button:hover, 
+.contains-button button:hover {
+  opacity: 0.9 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ==========================================================
+   COMPACT SIDE WIDGETS
+   ========================================================== */
+
+aside .block { padding: 1.25rem !important; }
+aside h2 { font-size: 1.1rem !important; margin-bottom: 1rem !important; }
+
+aside input[type="text"],
+aside input[type="url"],
+aside input[type="email"],
+.block .emailfield input {
+  padding: 0.6rem 1rem !important;
+  font-size: 0.85rem !important;
+}
+
+.block .emailfield:before {
+  padding: 0 0.85rem !important;
+  font-size: 0.85rem !important;
+}
+
+aside .contains-button button {
+  padding: 0.6rem 1.2rem !important;
+  font-size: 0.9rem !important;
+  margin-top: 0.75rem !important;
+  border-radius: var(--radius-md) !important; 
+}
+
+aside .test-direct {
+  border-top: 1px solid var(--border-subtle) !important;
+  margin-top: 1.25rem !important;
+  padding-top: 1.25rem !important;
+}
+
+aside .test-direct h3 {
+  font-size: 0.85rem !important;
+  color: var(--text-muted) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 1rem !important;
+}
+
+aside .test-direct ol { padding: 0 !important; margin: 0 !important; }
+aside .test-direct li { list-style: none !important; margin-bottom: 0.5rem !important; }
+
+aside .test-direct li a {
+  display: block !important;
+  background: var(--bg-surface-elevated) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 0.5rem 0.75rem !important;
+  color: var(--text-main) !important;
+  text-decoration: none !important;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace !important;
+  font-size: 0.8rem !important;
+  transition: all 0.2s ease !important;
+}
+
+aside .test-direct li a:hover {
+  background: var(--bg-surface-highlight) !important;
+  border-color: var(--accent-purple) !important;
+}
+
+/* ==========================================================
+   TIMESTAMPS & WARNINGS
+   ========================================================== */
+
+.timestamp {
+  background: rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 1.25rem !important;
+  margin-top: 1.5rem !important;
+  font-size: 0.85rem !important;
+  line-height: 2 !important;
+}
+
+.timestamp a {
+  text-decoration: none !important;
+  color: var(--text-muted) !important;
+  transition: color 0.2s ease;
+}
+
+.timestamp a:hover { color: var(--text-main) !important; }
+
+#dated-results-warning {
+  background: rgba(245, 158, 11, 0.1) !important;
+  border: 1px solid rgba(245, 158, 11, 0.2) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 1rem !important;
+  margin-top: 1rem !important;
+  text-align: left !important;
+}
+
+#dated-results-warning a {
+  color: var(--status-warning) !important;
+  text-decoration: none !important;
+}
+
+/* ==========================================================
+   TESTING PROGRESS PAGE (Probes interstitial)
+   ========================================================== */
+
+.block.fullwidth {
+  max-width: 800px !important;
+  margin: 3rem auto !important;
+  text-align: center !important;
+  background: rgba(26, 27, 35, 0.4) !important;
+  backdrop-filter: blur(16px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(120%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3) !important;
+}
+
+.block.fullwidth .wrap {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 2rem 1.5rem !important;
+}
+
+.block.fullwidth h1 {
+  font-size: 2.25rem !important;
+  margin-bottom: 1rem !important;
+  background: linear-gradient(135deg, #ffffff 0%, #a881f3 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.block.fullwidth p {
+  font-size: 1.1rem !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 2.5rem !important;
+  line-height: 1.6 !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.block.fullwidth ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  max-width: 650px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.25rem !important; 
+}
+
+.probing {
+  background: var(--bg-surface-elevated) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 1.5rem !important;
+  display: grid !important;
+  grid-template-columns: auto 1fr !important;
+  grid-template-areas: 
+    "title title"
+    "icon status" !important;
+  row-gap: 0.75rem !important;
+  column-gap: 1rem !important;
+  align-items: center !important;
+  text-align: left !important;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.2) !important;
+  transition: border-color 0.3s ease, background 0.3s ease !important;
+}
+
+.probing:hover {
+  background: var(--bg-surface-highlight) !important;
+  border-color: var(--border-focus) !important;
+}
+
+.probing br {
+  display: none !important;
+}
+
+.probing strong {
+  grid-area: title !important;
+  color: var(--text-main) !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  width: auto !important;
+  margin: 0 !important;
+}
+
+.probing img {
+  grid-area: icon !important;
+  margin: 0 !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 12px rgba(168, 129, 243, 0.4) !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.probing span {
+  grid-area: status !important;
+  color: var(--text-muted) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+}
+
+.jsless {
+  margin-top: 2rem !important;
+  text-align: center !important;
+}
+
+.jsless a {
+  display: inline-block !important;
+  background: var(--gradient-purple) !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  padding: 0.85rem 2rem !important;
+  border-radius: var(--radius-pill) !important;
+  font-weight: 500 !important;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.25) !important;
+  transition: transform 0.2s ease, opacity 0.2s ease !important;
+}
+
+.jsless a:hover {
+  opacity: 0.9 !important;
+  transform: translateY(-2px) !important;
+}
+
+
+/* ==========================================================
+   HEADER COLORS ONLY (Preserving original layout footprint)
+   ========================================================== */
+
+header {
+  background-color: var(--bg-surface) !important;
+  border-bottom-color: var(--accent-purple) !important; /* Replaces old blue 8px border */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5) !important; /* Slightly darker shadow for dark mode */
+}
+
+/* Base navigation links */
+header nav a {
+  color: var(--text-main) !important; /* White text */
+}
+
+header nav a:hover,
+header nav a:active,
+header nav a:focus {
+  color: var(--accent-purple) !important; /* Purple on hover */
+}
+
+/* Remove old white bottom borders on all nav items */
+header nav li {
+  border-bottom-color: transparent !important;
+}
+
+/* Purple bottom border on the active/current link */
+header nav li.current {
+  border-bottom-color: var(--accent-purple) !important;
+}
+
+/* Language Switcher Text */
+header .language-switch-list li a {
+  color: var(--text-muted) !important;
+}
+
+header .language-switch-list li a:hover,
+header .language-switch-list li a:active,
+header .language-switch-list li a:focus {
+  color: var(--accent-purple) !important;
+}
+
+/* Language Switcher Buttons */
+header .language-switch-list li button {
+  color: var(--text-main) !important;
+  background-color: transparent !important;
+}
+
+header .language-switch-list li button:hover,
+header .language-switch-list li button:active,
+header .language-switch-list li button:focus {
+  color: var(--accent-purple) !important;
+}
+
+header .language-switch-list li button.active-language {
+  color: var(--accent-purple) !important; /* Purple text for active language */
+}
+
+header .language-switch-list li button:focus {
+  outline-color: var(--accent-purple) !important;
+}
+
+/* Mobile Menu Button (if applicable) */
+#menu-button {
+  background-color: var(--bg-surface-elevated) !important;
+  border-color: var(--border-subtle) !important;
+  color: var(--text-main) !important;
+}
+
+#menu-button:focus {
+  outline-color: var(--accent-purple) !important;
+}
+
+#menu-button i {
+  color: var(--text-main) !important;
+}
