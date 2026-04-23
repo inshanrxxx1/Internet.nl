@@ -1833,13 +1833,9 @@ ul.menu li a[aria-current="page"] {
   --bg-surface-elevated: #1a1b23; 
   --bg-surface-highlight: #1e1b2e;
   
-  /* Brand Accents & Gradients */
-  --accent-blue: #005baa;
-  --accent-blue-light: #3b8cf2; /* Slightly lighter for readable text links on dark bg */
-  --accent-red: #e30137;
-  
-  --gradient-blue: linear-gradient(90deg, #005baa 0%, #003a70 100%);
-  --gradient-red: linear-gradient(90deg, #e30137 0%, #b30029 100%);
+  /* Accents & Gradients */
+  --accent-purple: #9d72ff;
+  --gradient-purple: linear-gradient(90deg, #a881f3 0%, #7e56f8 100%);
   
   /* Status Colors */
   --status-green: #10b981;
@@ -1889,18 +1885,18 @@ p, li, .description {
 }
 
 a {
-  color: var(--accent-blue-light) !important;
+  color: var(--accent-purple) !important;
 }
 
 /* Code Tag Styling */
 code {
-  background-color: var(--accent-blue) !important;
+  background-color: var(--accent-purple) !important;
   color: #ffffff !important;
   padding: 0.15rem 0.4rem !important;
   border-radius: var(--radius-sm) !important;
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace !important;
   font-size: 0.85em !important;
-  box-shadow: 0 2px 8px rgba(0, 91, 170, 0.3) !important;
+  box-shadow: 0 2px 8px rgba(157, 114, 255, 0.2) !important;
   border: none !important;
 }
 
@@ -2005,9 +2001,9 @@ code {
   height: 100% !important;
   top: 0 !important;
   left: 0 !important;
-  background: var(--gradient-blue) !important;
+  background: var(--gradient-purple) !important;
   border-radius: var(--radius-pill) !important;
-  box-shadow: 0 0 12px rgba(0, 91, 170, 0.6), inset 0 -2px 4px rgba(0,0,0,0.2) !important;
+  box-shadow: 0 0 12px rgba(168, 129, 243, 0.6), inset 0 -2px 4px rgba(0,0,0,0.2) !important;
 }
 
 /* ==========================================================
@@ -2154,8 +2150,8 @@ table td {
 }
 
 .block input:focus {
-  border-color: var(--accent-blue) !important;
-  box-shadow: 0 0 0 2px rgba(0, 91, 170, 0.3) !important;
+  border-color: var(--accent-purple) !important;
+  box-shadow: 0 0 0 2px rgba(168, 129, 243, 0.2) !important;
 }
 
 .block .emailfield {
@@ -2170,7 +2166,7 @@ table td {
 }
 
 .block .emailfield:focus-within {
-  border-color: var(--accent-blue) !important;
+  border-color: var(--accent-purple) !important;
 }
 
 .block .emailfield:before {
@@ -2201,7 +2197,7 @@ table td {
 
 .block button, 
 .contains-button button {
-  background: var(--gradient-blue) !important;
+  background: var(--gradient-purple) !important;
   color: #ffffff !important;
   border: none !important;
   border-radius: var(--radius-pill) !important;
@@ -2209,17 +2205,15 @@ table td {
   font-weight: 500 !important;
   font-size: 0.95rem !important;
   cursor: pointer !important;
-  box-shadow: 0 4px 15px rgba(0, 91, 170, 0.3) !important;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.25) !important;
   width: 100% !important;
   margin-top: 1.25rem !important;
-  transition: all 0.2s ease !important;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-/* Buttons glow RED on hover to match logo padlock! */
 .block button:hover, 
 .contains-button button:hover {
-  background: var(--gradient-red) !important;
-  box-shadow: 0 4px 15px rgba(227, 1, 55, 0.3) !important;
+  opacity: 0.9 !important;
   transform: translateY(-1px) !important;
 }
 
@@ -2282,7 +2276,7 @@ aside .test-direct li a {
 
 aside .test-direct li a:hover {
   background: var(--bg-surface-highlight) !important;
-  border-color: var(--accent-blue) !important;
+  border-color: var(--accent-purple) !important;
 }
 
 /* ==========================================================
@@ -2345,7 +2339,7 @@ aside .test-direct li a:hover {
 .block.fullwidth h1 {
   font-size: 2.25rem !important;
   margin-bottom: 1rem !important;
-  background: linear-gradient(135deg, #ffffff 0%, var(--accent-blue-light) 100%) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #a881f3 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
@@ -2410,7 +2404,7 @@ aside .test-direct li a:hover {
   grid-area: icon !important;
   margin: 0 !important;
   border-radius: 50% !important;
-  box-shadow: 0 0 12px rgba(0, 91, 170, 0.4) !important;
+  box-shadow: 0 0 12px rgba(168, 129, 243, 0.4) !important;
   width: 24px !important;
   height: 24px !important;
 }
@@ -2429,19 +2423,18 @@ aside .test-direct li a:hover {
 
 .jsless a {
   display: inline-block !important;
-  background: var(--gradient-blue) !important;
+  background: var(--gradient-purple) !important;
   color: #ffffff !important;
   text-decoration: none !important;
   padding: 0.85rem 2rem !important;
   border-radius: var(--radius-pill) !important;
   font-weight: 500 !important;
-  box-shadow: 0 4px 15px rgba(0, 91, 170, 0.3) !important;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.25) !important;
   transition: transform 0.2s ease, opacity 0.2s ease !important;
 }
 
 .jsless a:hover {
-  background: var(--gradient-red) !important;
-  box-shadow: 0 4px 15px rgba(227, 1, 55, 0.3) !important;
+  opacity: 0.9 !important;
   transform: translateY(-2px) !important;
 }
 
@@ -2452,19 +2445,19 @@ aside .test-direct li a:hover {
 
 header {
   background-color: var(--bg-surface) !important;
-  border-bottom-color: var(--accent-blue) !important; /* Blue base border */
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5) !important; 
+  border-bottom-color: var(--accent-purple) !important; /* Replaces old blue 8px border */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5) !important; /* Slightly darker shadow for dark mode */
 }
 
 /* Base navigation links */
 header nav a {
-  color: var(--text-main) !important; 
+  color: var(--text-main) !important; /* White text */
 }
 
 header nav a:hover,
 header nav a:active,
 header nav a:focus {
-  color: var(--accent-blue-light) !important; 
+  color: var(--accent-purple) !important; /* Purple on hover */
 }
 
 /* Remove old white bottom borders on all nav items */
@@ -2472,9 +2465,9 @@ header nav li {
   border-bottom-color: transparent !important;
 }
 
-/* Red active link matches the red padlock logo! */
+/* Purple bottom border on the active/current link */
 header nav li.current {
-  border-bottom-color: var(--accent-red) !important;
+  border-bottom-color: var(--accent-purple) !important;
 }
 
 /* Language Switcher Text */
@@ -2485,7 +2478,7 @@ header .language-switch-list li a {
 header .language-switch-list li a:hover,
 header .language-switch-list li a:active,
 header .language-switch-list li a:focus {
-  color: var(--accent-blue-light) !important;
+  color: var(--accent-purple) !important;
 }
 
 /* Language Switcher Buttons */
@@ -2497,16 +2490,15 @@ header .language-switch-list li button {
 header .language-switch-list li button:hover,
 header .language-switch-list li button:active,
 header .language-switch-list li button:focus {
-  color: var(--accent-blue-light) !important;
+  color: var(--accent-purple) !important;
 }
 
-/* Red active language text */
 header .language-switch-list li button.active-language {
-  color: var(--accent-red) !important; 
+  color: var(--accent-purple) !important; /* Purple text for active language */
 }
 
 header .language-switch-list li button:focus {
-  outline-color: var(--accent-blue) !important;
+  outline-color: var(--accent-purple) !important;
 }
 
 /* Mobile Menu Button (if applicable) */
@@ -2517,7 +2509,7 @@ header .language-switch-list li button:focus {
 }
 
 #menu-button:focus {
-  outline-color: var(--accent-blue) !important;
+  outline-color: var(--accent-purple) !important;
 }
 
 #menu-button i {
@@ -2585,11 +2577,10 @@ header .language-switch-list li button:focus {
 }
 
 .home .block .wrapper .read-more a {
-  color: var(--accent-blue-light) !important;
+  color: var(--accent-purple) !important;
   text-decoration: none !important;
 }
 
 .home .block .wrapper .read-more a:hover {
   text-decoration: underline !important;
 }
-
